@@ -1,0 +1,469 @@
+@font-face {
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/HelveticaNeueCyr-Roman.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/HelveticaNeueCyr-Medium.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/HelveticaNeueCyr-Bold.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/Montserrat-VariableFont_wght.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Victor Mono";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/VictorMono-SemiBold.woff") format("woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Victor Mono";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/VictorMono-Bold.woff") format("woff");
+  font-display: swap;
+}
+
+.wrapper {
+  width: 1220px;
+  margin: 0 auto;
+}
+
+.page {
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.page__body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  min-height: 100%;
+  font-family: "Helvetica Neue", "Arrial", sans-serif;
+  color: #333333;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 30px;
+}
+
+.main-container {
+  flex-grow: 1;
+}
+
+/*Общие стили*/
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+  max-width: 100%;
+  display: block;
+}
+
+.button {
+  color: #333333;
+  text-decoration: none;
+  font-family: "Monsterrat", "Arial", sans-serif;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.24);
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.09);
+}
+
+.button--primary {
+  padding: 30px 70px;
+  border-radius: 100px;
+}
+
+.button--secondary {
+  padding: 14px 43px;
+  border-radius: 50px;
+  font-size: 15px;
+  line-height: 18px;
+}
+
+/* Общие стили для карточек */
+.products-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 14px;
+  padding: 0;
+  margin-top: 0;
+  list-style-type: none;
+}
+
+.product-card__link {
+  position: relative;
+  display: block;
+}
+
+.product-card__image {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  filter: brightness(85%);
+}
+
+.product-card__title {
+  position: absolute;
+  left: calc(50% - 245px/2);
+  top: calc(43% - 24px/2);
+  width: 245px;
+  color: #ffffff;
+  font-size: 20px;
+  z-index: 2;
+}
+
+/* Шапка */
+.main-header__wrapper {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 0;
+  margin-bottom: 144px;
+}
+
+.header-address__phone {
+  text-align: center;
+  font-size: 22px;
+  color: #636361;
+  text-decoration: none;
+  font-style: normal;
+}
+
+.main-header__nav {
+  position: absolute;
+  top: calc(100% + 112px);
+  z-index: 2;
+}
+
+.navigation-list {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.navigation-list__item:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.navigation-list__link {
+  color: #333333;
+  text-decoration: none;
+}
+
+/* Промо-блок */
+.promo {
+  position: relative;
+  padding-left: 100px;
+  padding-bottom: 542px;
+  margin-bottom: 154px;
+}
+
+.promo__title {
+  position: relative;
+  width: 590px;
+  margin-left: 310px;
+  margin-bottom: 161px;
+  font-family: "Victor Mono", "Arial", sans-serif;
+  font-weight: 600;
+  font-size: 45px;
+  line-height: 63px;
+  color: #636361;
+}
+
+.promo__title::after {
+  position: absolute;
+  bottom: -35px;
+  left: 0;
+  content: "";
+  width: 105px;
+  height: 30px;
+  background-image: url("../img/icons/arrow--next.svg");
+  background-repeat: no-repeat;
+}
+
+.promo-button {
+  margin-left: 103px;
+}
+
+.promo__image {
+  position: absolute;
+  z-index: -1;
+}
+
+.promo__image--first {
+  top: 22px;
+  right: 0;
+}
+
+.promo__image--second {
+  bottom: 0;
+  left: 0;
+}
+
+/* Услуги */
+.services__list {
+  margin-bottom: 250px;
+}
+
+.services-list__item {
+  text-align: center;
+}
+
+.services-list__item--first {
+  padding-top: 52px;
+}
+
+.services-list__item--second {
+  padding-top: 132px;
+}
+
+.services-list__item--fourth {
+  padding-top: 120px;
+}
+
+/* Карта */
+.map {
+  position: relative;
+  margin-bottom: 150px;
+}
+
+.map__address-wrapper {
+  position: absolute;
+  top: 114px;
+  right: -20px;
+  padding: 30px 40px 44px 40px;
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  backdrop-filter: blur(16px);
+}
+
+.map-address__address {
+  margin-bottom: 17px;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #555555;
+  font-style: normal;
+}
+
+.map-address__phone {
+  display: block;
+  margin-bottom: 34px;
+  font-size: 20px;
+  line-height: 20px;
+  color: #a7a7a7;
+  text-decoration: none;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.map__image {
+  /*position: relative;*/
+  border-radius: 20px;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+}
+
+.map__image-wrapper {
+  position: relative;
+}
+
+.map__pin {
+  position: absolute;
+}
+
+.map__pin--first {
+  top: 114px;
+  right: 365px;
+}
+
+.map__pin--second {
+  bottom: 94px;
+  left: 360px;
+}
+
+/* Акции */
+.promotions {
+  margin-bottom: 165px;
+}
+
+.promotions__title {
+  margin-bottom: 67px;
+  font-family: "Victor Mono", "Arial", sans-serif;
+  font-size: 60px;
+  font-weight: 600;
+  line-height: 85px;
+  color: #555555;
+}
+
+.promotions-list__item--first {
+  padding-top: 110px;
+}
+
+.promotions-list__item--second {
+  padding-bottom: 110px;
+}
+
+.promotions-list__item--third {
+  padding-top: 130px;
+}
+
+.promotions-list__item--fourth {
+  padding-top: 40px;
+}
+
+.promotions__list {
+  margin-bottom: 100px;
+}
+
+/* Подвал */
+.footer {
+  background-color: #333333;
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
+.footer .wrapper {
+  display: grid;
+  grid-template-areas: "navigation navigation"
+    "copyright agreement";
+  grid-template-columns: 1fr 1fr;
+}
+
+.footer__navigation-wrapper {
+  grid-area: navigation;
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 107px;
+}
+
+.footer__navigation:not(:last-child) {
+  margin-right: 67px;
+}
+
+.footer__navigation--last-column {
+  margin-left: auto;
+}
+
+.footer-navigation {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+}
+
+.footer-navigation__link {
+  color: #B9B9B9;
+  font-family: "Roboto", "Arial", sans-serif;
+  font-size: 15px;
+  line-height: 18px;
+  text-decoration: none;
+}
+
+.footer-navigation-phone {
+  text-decoration: underline;
+  font-style: normal;
+}
+
+.footer-navigation-address {
+  margin: 0;
+  font-size: 15px;
+  line-height: 18px;
+  color: #B9B9B9;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.footer-navigation__title {
+  margin-bottom: 25px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+  color: #ffffff;
+}
+
+.footer-navigation__item:not(:last-child) {
+  margin-bottom: 10px;
+  line-height: 18px;
+}
+
+.contacts-navigation__item {
+  position: relative;
+  padding-left: 28px;
+}
+
+.contacts-navigation__item:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.contacts-navigation__item::before {
+  position: absolute;
+  left: 0;
+  content: "";
+  background-repeat: no-repeat;
+}
+
+.contacts-navigation__item--phone::before {
+  top: 5px;
+  background-image: url("../img/icons/phone.svg");
+  width: 13px;
+  height: 13px;
+}
+
+.contacts-navigation__item--address::before {
+  background-image: url("../img/icons/address.svg");
+  width: 13px;
+  height: 16.13px;
+}
+
+.footer__copyright,
+.footer__agreement {
+  font-family: "Roboto", "Arial", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.footer__copyright {
+  grid-area: copyright;
+  color: #999999;
+}
+
+.footer__agreement {
+  grid-area: agreement;
+  text-align: right;
+  color: #ffffff;
+}
