@@ -401,10 +401,6 @@
   left: 370px;
 }
 
-.map__pin-link:hover .map__pin {
-  width: 
-}
-
 /* Акции */
 .promotions {
   display: flex;
