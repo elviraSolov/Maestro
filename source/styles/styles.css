@@ -47,8 +47,10 @@
 }
 
 .wrapper {
-  width: 1220px;
+  max-width: 1400px;
   margin: 0 auto;
+  padding: 0 90px;
+  box-sizing: border-box;
 }
 
 .page {
@@ -150,7 +152,8 @@
   position: relative;
   display: flex;
   justify-content: space-between;
-  padding: 50px 0;
+  padding-top: 50px;
+  padding-bottom: 50px;
   margin-bottom: 144px;
 }
 
@@ -193,9 +196,10 @@
 
 .promo__title {
   position: relative;
-  width: 590px;
-  margin-left: 310px;
-  margin-bottom: 161px;
+  width: 495px;
+  margin: 0 auto 161px auto;
+  /*margin-left: 310px;*/
+  /*margin-bottom: 161px;*/
   font-family: "Victor Mono", "Arial", sans-serif;
   font-weight: 600;
   font-size: 45px;
@@ -263,7 +267,7 @@
 .map__address-wrapper {
   position: absolute;
   top: 114px;
-  right: -20px;
+  right: -80px;
   padding: 30px 40px 44px 40px;
   background-color: rgba(255, 255, 255, 0.5);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
@@ -292,9 +296,9 @@
 }
 
 .map__image {
-  /*position: relative;*/
   border-radius: 20px;
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+  margin: 0 auto;
 }
 
 .map__image-wrapper {
@@ -307,12 +311,12 @@
 
 .map__pin--first {
   top: 114px;
-  right: 365px;
+  right: 352px;
 }
 
 .map__pin--second {
   bottom: 94px;
-  left: 360px;
+  left: 370px;
 }
 
 /* Акции */
@@ -356,7 +360,7 @@
   padding-bottom: 40px;
 }
 
-.footer .wrapper {
+.footer-wrapper {
   display: grid;
   grid-template-areas: "navigation navigation"
     "copyright agreement";
@@ -366,6 +370,7 @@
 .footer__navigation-wrapper {
   grid-area: navigation;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   padding-bottom: 107px;
 }
