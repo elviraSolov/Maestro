@@ -97,12 +97,27 @@
 }
 
 .button {
+  box-sizing: border-box;
   color: #333333;
   text-decoration: none;
   font-family: "Monsterrat", "Arial", sans-serif;
   font-weight: 500;
   background: rgba(255, 255, 255, 0.24);
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.09);
+  outline: 1px solid transparent;
+  transition-property: outline-color, background-color, color;
+}
+
+.button:hover {
+  outline-color: #636361;
+  transition: outline-color 0.25s ease-out;
+}
+
+.button:active {
+  background-color: rgba(182, 141, 116, 0.7);
+  color: #ffffff;
+  outline: none;
+  transition: background-color 0.25s, color 0.25s;
 }
 
 .button--primary {
@@ -121,7 +136,9 @@
 .products-list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 508px;
   grid-column-gap: 14px;
+  box-sizing: border-box;
   padding: 0;
   margin-top: 0;
   list-style-type: none;
@@ -135,6 +152,13 @@
 .product-card__image {
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   filter: brightness(85%);
+  transition: width, height;
+}
+
+.product-card__link:hover .product-card__image {
+  width: 299px;
+  height: 366px;
+  transition: width 0.4s, height 0.4s;
 }
 
 .product-card__title {
@@ -157,12 +181,36 @@
   margin-bottom: 144px;
 }
 
+.main-header__logo .header-logo {
+  fill: #333333;
+  transition-property: fill;
+}
+
+.main-header__logo:hover .header-logo {
+  fill: #b68d74;
+  transition: fill 0.25s;
+}
+
+.main-header__logo:active .header-logo {
+  fill: #8b6751;
+}
+
 .header-address__phone {
   text-align: center;
   font-size: 22px;
   color: #636361;
   text-decoration: none;
   font-style: normal;
+  transition-property: color;
+}
+
+.header-address__phone:hover {
+  color: #b68d74;
+  transition: color 0.25s;
+}
+
+.header-address__phone:active {
+  color: #8b6751;
 }
 
 .main-header__nav {
@@ -184,6 +232,16 @@
 .navigation-list__link {
   color: #333333;
   text-decoration: none;
+  transition-property: color;
+}
+
+.navigation-list__link:hover {
+  color: #b68d74;
+  transition: color 0.25s;
+}
+
+.navigation-list__link:active {
+  color: #8b6751;
 }
 
 /* Промо-блок */
@@ -194,28 +252,49 @@
   margin-bottom: 154px;
 }
 
-.promo__title {
+.promo__sale-link {
   position: relative;
-  width: 495px;
   margin: 0 auto 161px auto;
-  /*margin-left: 310px;*/
-  /*margin-bottom: 161px;*/
+}
+
+.sale-link {
+  display: block;
+  width: 495px;
   font-family: "Victor Mono", "Arial", sans-serif;
   font-weight: 600;
   font-size: 45px;
   line-height: 63px;
   color: #636361;
+  text-decoration: none;
+  transition-property: color;
 }
 
-.promo__title::after {
+.sale-link__arrow {
   position: absolute;
   bottom: -35px;
   left: 0;
   content: "";
   width: 105px;
   height: 30px;
-  background-image: url("../img/icons/arrow--next.svg");
-  background-repeat: no-repeat;
+  fill: #636361;
+}
+
+.sale-link:hover {
+  color: #b68d74;
+  transition-duration: 0.25s;
+}
+
+.sale-link:active {
+  color: #8b6751;
+}
+
+.sale-link:hover .sale-link__arrow {
+  fill: #b68d74;
+  transition-duration: 0.25s;
+}
+
+.sale-link:active .sale-link__arrow {
+  fill: #8b6751;
 }
 
 .promo-button {
@@ -239,7 +318,7 @@
 
 /* Услуги */
 .services__list {
-  margin-bottom: 250px;
+  margin-bottom: 240px;
 }
 
 .services-list__item {
@@ -296,9 +375,11 @@
 }
 
 .map__image {
+  margin: 0 auto;
+  min-width: 100%;
+
   border-radius: 20px;
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
-  margin: 0 auto;
 }
 
 .map__image-wrapper {
@@ -307,6 +388,7 @@
 
 .map__pin {
   position: absolute;
+  transition-property: width, height;
 }
 
 .map__pin--first {
@@ -319,8 +401,14 @@
   left: 370px;
 }
 
+.map__pin-link:hover .map__pin {
+  width: 
+}
+
 /* Акции */
 .promotions {
+  display: flex;
+  flex-direction: column;
   margin-bottom: 165px;
 }
 
@@ -351,6 +439,10 @@
 
 .promotions__list {
   margin-bottom: 100px;
+}
+
+.promotions__button {
+  align-self: flex-end;
 }
 
 /* Подвал */
@@ -396,6 +488,16 @@
   font-size: 15px;
   line-height: 18px;
   text-decoration: none;
+  transition-property: opacity;
+}
+
+.footer-navigation__link:hover {
+  opacity: 0.7;
+  transition: opacity 0.25s;
+}
+
+.footer-navigation__link:active {
+  opacity: 0.4;
 }
 
 .footer-navigation-phone {
