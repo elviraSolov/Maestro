@@ -59,6 +59,7 @@
 }
 
 .page__body {
+  position: relative;
   display: flex;
   flex-direction: column;
   margin: 0;
@@ -375,20 +376,15 @@
 }
 
 .map__image {
+  position: relative;
   margin: 0 auto;
-  min-width: 100%;
-
   border-radius: 20px;
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
 }
 
-.map__image-wrapper {
-  position: relative;
-}
-
 .map__pin {
   position: absolute;
-  transition-property: width, height;
+  transition-property: transform;
 }
 
 .map__pin--first {
@@ -401,11 +397,16 @@
   left: 370px;
 }
 
+.map__pin-link:hover .map__pin {
+  transform: scale(1.15);
+  transition: transform 0.25s;
+}
+
 /* Акции */
 .promotions {
   display: flex;
   flex-direction: column;
-  margin-bottom: 165px;
+  margin-bottom: 135px;
 }
 
 .promotions__title {
@@ -518,9 +519,12 @@
   color: #ffffff;
 }
 
-.footer-navigation__item:not(:last-child) {
-  margin-bottom: 10px;
+.footer-navigation__item {
   line-height: 18px;
+}
+
+.footer-navigation__item:not(:last-child) {
+  margin-bottom: 7px;
 }
 
 .contacts-navigation__item {
@@ -570,3 +574,17 @@
   text-align: right;
   color: #ffffff;
 }
+
+ /*Стрелка прокрутки */
+/*.page__body > .arrow-top__wrapper {*/
+/*  position: absolute;*/
+/*  right: calc(50% - 700px);*/
+/*  width: 1400px;*/
+/*  height: 100%;*/
+/*}*/
+
+/*.page__body > .arrow-top__wrapper > .arrow-top__image {*/
+/*  position: fixed;*/
+/*  transform: translateX(1310px);*/
+/*  bottom: 120px;*/
+/*}*/
