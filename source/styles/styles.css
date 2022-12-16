@@ -59,7 +59,6 @@
 }
 
 .page__body {
-  position: relative;
   display: flex;
   flex-direction: column;
   margin: 0;
@@ -575,10 +574,10 @@
   color: #ffffff;
 }
 
- /*Стрелка прокрутки */
+ /* Стрелка прокрутки */
 /*.page__body > .arrow-top__wrapper {*/
 /*  position: absolute;*/
-/*  right: calc(50% - 700px);*/
+/*  right: calc(50% - 700px);display: flex;*/
 /*  width: 1400px;*/
 /*  height: 100%;*/
 /*}*/
